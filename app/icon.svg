@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:0.0218;stroke-miterlimit:10;}
+	.st2{fill:url(#SVGID_00000062895775663001908100000016870238647465589656_);}
+	.st3{fill:url(#SVGID_00000094586904580441476260000015999740415317938306_);}
+	.st4{fill:none;stroke:#FFFFFF;stroke-width:1.0924;stroke-miterlimit:10;}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="12.0733" y1="25.3349" x2="11.9208" y2="-2.3935">
+	<stop  offset="0.0756" style="stop-color:#BF8832"/>
+	<stop  offset="0.295" style="stop-color:#EAEAEA"/>
+	<stop  offset="0.5087" style="stop-color:#883E1D"/>
+	<stop  offset="0.7178" style="stop-color:#F3F3F3"/>
+	<stop  offset="0.916" style="stop-color:#BF8832"/>
+</linearGradient>
+<circle class="st0" cx="12" cy="12" r="11.81"/>
+<polygon class="st1" points="10.36,19.1 10.36,17.54 4.76,17.54 9.51,12.59 6.8,12.59 11.9,4.9 17.17,12.42 14.39,12.42 
+	19.24,17.54 13.54,17.44 13.58,19.1 "/>
+<radialGradient id="SVGID_00000051367519143701427580000007270163217995965103_" cx="12" cy="12" r="42.5366" gradientUnits="userSpaceOnUse">
+	<stop  offset="0.2091" style="stop-color:#AA762C"/>
+	<stop  offset="0.4476" style="stop-color:#D5B382"/>
+	<stop  offset="0.5229" style="stop-color:#D0A972"/>
+	<stop  offset="0.7082" style="stop-color:#C6964E"/>
+	<stop  offset="0.8512" style="stop-color:#C18C39"/>
+	<stop  offset="0.9335" style="stop-color:#BF8832"/>
+</radialGradient>
+<circle style="fill:url(#SVGID_00000051367519143701427580000007270163217995965103_);" cx="12" cy="12" r="11.21"/>
+<linearGradient id="SVGID_00000157989392662920035110000012235885151685542844_" gradientUnits="userSpaceOnUse" x1="12.0696" y1="24.6585" x2="11.9249" y2="-1.6634">
+	<stop  offset="0.0756" style="stop-color:#BF8832"/>
+	<stop  offset="0.5087" style="stop-color:#883E1D"/>
+	<stop  offset="0.916" style="stop-color:#BF8832"/>
+</linearGradient>
+<circle style="fill:url(#SVGID_00000157989392662920035110000012235885151685542844_);" cx="12" cy="12" r="11.21"/>
+<polygon class="st4" points="10.44,18.3 10.44,16.82 5.13,16.82 9.64,12.13 7.06,12.13 11.91,4.82 16.91,11.97 14.27,11.97 
+	18.87,16.82 13.46,16.73 13.5,18.3 "/>
+</svg>
