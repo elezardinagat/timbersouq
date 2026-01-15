@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  // distDir: 'dist',
+  basePath: '/timbersouq',
+  assetPrefix: '/timbersouq/',
   images: {
     unoptimized: true,
   },
