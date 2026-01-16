@@ -4,7 +4,7 @@ export const products = [
     name: "LVL Board",
     fullName: "Laminated Veneer Lumber Board",
     description: "High-strength engineered wood for structural applications",
-    image: "/images/products/lvl-board.jpg",
+    image: "https://elezardinagat.github.io/timbersouq/images/products/lvl-board.jpg",
     detailedDescription:
       "LVL (Laminated Veneer Lumber) is an engineered wood product that uses multiple layers of thin wood assembled with adhesives. It offers superior strength and stability compared to conventional lumber, making it ideal for structural applications in construction.",
     features: [
@@ -33,7 +33,7 @@ export const products = [
     name: "White Wood",
     fullName: "Premium White Wood Timber",
     description: "Premium quality softwood for construction and finishing",
-    image: "/images/products/white-wood.jpg",
+    image: "https://elezardinagat.github.io/timbersouq/images/products/white-wood.jpg",
     detailedDescription:
       "White wood is premium quality softwood timber sourced from sustainable forests. Known for its light color and fine grain, it is ideal for both structural and decorative applications in construction and interior design.",
     features: [
@@ -62,7 +62,7 @@ export const products = [
     name: "Scaffolding Board",
     fullName: "Scaffolding Board / Plank",
     description: "Durable boards for safe scaffolding systems",
-    image: "/images/products/scaffolding-board.jpg",
+    image: "https://elezardinagat.github.io/timbersouq/images/products/scaffolding-board.jpg",
     detailedDescription:
       "Our scaffolding boards are manufactured to meet strict safety standards for construction scaffolding. Made from strong, treated timber, they provide a safe working platform for construction workers at height.",
     features: [
@@ -91,7 +91,7 @@ export const products = [
     name: "Film Faced Plywood",
     fullName: "Film Faced Shuttering Plywood",
     description: "Water-resistant plywood for concrete formwork",
-    image: "/images/products/film-faced-plywood.jpg",
+    image: "https://elezardinagat.github.io/timbersouq/images/products/film-faced-plywood.jpg",
     detailedDescription:
       "Film faced plywood is specially designed for concrete formwork applications. With a durable film coating on both sides, it provides a smooth finish to concrete and can be reused multiple times, making it cost-effective for large construction projects.",
     features: [
@@ -120,7 +120,7 @@ export const products = [
     name: "H20 Beam",
     fullName: "H20 Timber Beam for Formwork",
     description: "Strong support beams for formwork systems",
-    image: "/images/products/h20-beam.jpg",
+    image: "https://elezardinagat.github.io/timbersouq/images/products/h20-beam.jpg",
     detailedDescription:
       "H20 beams are specialized formwork beams designed for high-performance concrete forming systems. With an I-beam profile, they offer excellent load-bearing capacity while remaining lightweight and easy to handle.",
     features: [
@@ -149,7 +149,7 @@ export const products = [
     name: "Hardboard",
     fullName: "High-Density Hardboard",
     description: "Dense fiberboard for interior applications",
-    image: "/images/products/hardboard.webp",
+    image: "https://elezardinagat.github.io/timbersouq/images/products/hardboard.webp",
     detailedDescription:
       "Hardboard is a high-density fiberboard product made from compressed wood fibers. It provides a smooth, durable surface ideal for interior finishing, furniture backing, and various construction applications.",
     features: [
@@ -178,7 +178,7 @@ export const products = [
     name: "Commercial Plywood",
     fullName: "Commercial Grade Plywood",
     description: "Versatile plywood for various construction needs",
-    image: "/images/products/commercial-plywood.jpg",
+    image: "https://elezardinagat.github.io/timbersouq/images/products/commercial-plywood.jpg",
     detailedDescription:
       "Commercial plywood is a versatile engineered wood panel suitable for a wide range of construction and interior applications. Made from multiple layers of wood veneers, it offers good strength, stability, and value for money.",
     features: [
