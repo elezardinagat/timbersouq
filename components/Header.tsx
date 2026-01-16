@@ -37,7 +37,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/logo/timbersouq-logo.png"
+              src="./images/logo/timbersouq-logo.png"
               alt="TimberSouq Logo"
               width={180}
               height={50}
