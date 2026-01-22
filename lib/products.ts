@@ -22,10 +22,10 @@ export const products = [
       "Floor and roof systems",
     ],
     specifications: [
-      "Thickness: 18mm - 90mm",
-      "Width: Up to 1220mm",
-      "Length: Custom lengths available",
-      "Density: 500-600 kg/m³",
+      "Origin: Austria, China",
+      "Width: 225mm",
+      "Length: 1m to 4mm",
+      "Thickness: 38mm",
     ],
   },
   {
@@ -51,10 +51,10 @@ export const products = [
       "General carpentry",
     ],
     specifications: [
-      "Thickness: 12mm - 50mm",
-      "Width: Various standard sizes",
-      "Length: 2440mm - 3660mm",
-      "Moisture content: 12-15%",
+      "Origin:	Romania, Austria, Germany, Chile",
+      "Width: 2inch to 12inch",
+      "Length: 10ft to 13ft",
+      "Thickness: 1inch to 4inch",
     ],
   },
   {
@@ -80,10 +80,10 @@ export const products = [
       "Formwork support",
     ],
     specifications: [
-      "Thickness: 38mm standard",
-      "Width: 225mm standard",
-      "Length: 3.9m - 4.8m",
-      "Load capacity: Up to 270kg",
+      "Origin: Austria",
+      "Width: 225mm",
+      "Length: 1m to 4m",
+      "Thickness: 38mm",
     ],
   },
   {
@@ -109,10 +109,10 @@ export const products = [
       "Bridge construction",
     ],
     specifications: [
-      "Thickness: 12mm, 15mm, 18mm, 21mm",
-      "Size: 1220 x 2440mm, 1250 x 2500mm",
-      "Core: Poplar, Hardwood, Combi",
-      "Film: Phenolic, Brown/Black",
+      "Origin: Austria",
+      "Width: 225mm",
+      "Length: 1m to 4m",
+      "Thickness: 38mm",
     ],
   },
   {
@@ -138,10 +138,12 @@ export const products = [
       "Bridge deck construction",
     ],
     specifications: [
-      "Height: 200mm standard",
-      "Length: 2.65m - 5.90m",
-      "Flange width: 80mm",
-      "Web thickness: 15mm",
+      "Origin: Austria",
+      "Width: 200mm",
+      "Cord: 40mm(Lower & Upper Element)",
+      "Core Width: 80mm",
+      "Length: 1.9m to 5.9m",
+      "Packaging: 100pcs/bundle | 105pcs/bundle",
     ],
   },
   {
@@ -167,10 +169,10 @@ export const products = [
       "Craft and DIY projects",
     ],
     specifications: [
-      "Thickness: 3mm, 4mm, 6mm",
-      "Size: 1220 x 2440mm standard",
-      "Density: 800-1000 kg/m³",
-      "Surface: Smooth one side (S1S) or both sides (S2S)",
+      "Origin: Thailand, Brazil, India, China",
+      "Width: 1220mm",
+      "Length: 2440mm",
+      "Thickness: 2.4mm to 13mm",
     ],
   },
   {
@@ -196,10 +198,10 @@ export const products = [
       "Packaging and crating",
     ],
     specifications: [
-      "Thickness: 4mm - 25mm",
-      "Size: 1220 x 2440mm, 1220 x 1830mm",
-      "Core: Hardwood, Poplar",
-      "Grade: BB/CC, C/D",
+      "Origin: Austria, China, Malaysia",
+      "Width: 1220mm",
+      "Length: 2440mm",
+      "Thickness: 2.5mm to 24mm",
     ],
   },
 ];
@@ -207,8 +209,9 @@ export const products = [
 export const siteSettings = {
   name: "Timber Souq",
   description: "Your one-stop shop for quality timber and wood products.",
-  address: "123 Timber St, Woodsville, WS 12345",
-  phone: "+1 (555) 123-4567",
+  address:
+    "Suite 503, Platinum Business Centre, Baghdad Street, 7A Street, Al Nahda 2, Dubai, UAE",
+  phone: "+971 4 251 2418",
   email: "info@timbersouq.com",
   social: {
     facebook: "https://facebook.com/timbersouq",

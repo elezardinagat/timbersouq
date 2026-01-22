@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { COUNTRY_CODES } from "@/lib/countryCodess";
+import { COUNTRY_CODES, getCountryFlagUrlByIso } from "@/lib/countryCodess";
 
 interface FormErrors {
   name?: string;
@@ -33,6 +33,7 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -54,9 +55,10 @@ export default function ContactForm() {
 
     // Phone validation (if provided)
     if (formData.phone) {
-      const phoneRegex = /^[0-9\s\-\+\(\)]{7,}$/;
+      const phoneRegex = /^[0-9]{7,15}$/;
       if (!phoneRegex.test(formData.phone)) {
-        newErrors.phone = "Please enter a valid phone number";
+        newErrors.phone =
+          "Please enter a valid phone number (7-15 digits only)";
       }
     }
 
@@ -79,12 +81,19 @@ export default function ContactForm() {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
+
+    // Filter non-numeric characters for phone field
+    let processedValue = value;
+    if (name === "phone") {
+      processedValue = value.replace(/[^0-9]/g, "");
+    }
+
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: processedValue,
     }));
     // Clear error for this field
     if (errors[name as keyof FormErrors]) {
@@ -93,6 +102,7 @@ export default function ContactForm() {
         [name]: undefined,
       }));
     }
+    setSubmitError("");
   };
 
   const handleCountryCodeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -110,23 +120,29 @@ export default function ContactForm() {
     }
 
     setIsLoading(true);
+    setSubmitError("");
 
     try {
-      // Simulate API call with validation
-      const payload = {
-        name: formData.name.trim(),
-        email: formData.email.toLowerCase().trim(),
-        phone: formData.countryCode + " " + formData.phone.trim(),
-        subject: formData.subject,
-        message: formData.message.trim(),
-        timestamp: new Date().toISOString(),
-      };
+      const response = await fetch("https://formspree.io/f/mnjjzrgj", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.toLowerCase().trim(),
+          phone: formData.countryCode + " " + formData.phone.trim(),
+          subject: formData.subject,
+          message: formData.message.trim(),
+          _replyto: formData.email.toLowerCase().trim(),
+          _subject: `TimberSouq Contact: ${formData.subject}`,
+        }),
+      });
 
-      // Here you would send to your backend
-      console.log("Form submission:", payload);
-
-      // Simulate network delay
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
 
       setSubmitted(true);
       setFormData({
@@ -138,14 +154,12 @@ export default function ContactForm() {
         countryCode: "+971",
       });
 
-      // Reset success message after 5 seconds
       setTimeout(() => setSubmitted(false), 5000);
     } catch (error) {
       console.error("Form submission error:", error);
-      setErrors({
-        ...errors,
-        message: "Failed to send message. Please try again.",
-      });
+      setSubmitError(
+        "Failed to send message. Please try again or email us directly at info@timbersouq.com",
+      );
     } finally {
       setIsLoading(false);
     }
@@ -159,6 +173,12 @@ export default function ContactForm() {
             Thank you! Your message has been sent successfully.
           </p>
           <p className="text-sm">We will get back to you shortly.</p>
+        </div>
+      )}
+
+      {submitError && (
+        <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
+          <p className="text-sm">{submitError}</p>
         </div>
       )}
 
@@ -179,7 +199,7 @@ export default function ContactForm() {
           className={`w-full px-4 py-3 rounded-md border transition outline-none ${
             errors.name
               ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200"
-              : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20"
+              : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20 text-black"
           }`}
           placeholder="Your name"
           autoComplete="name"
@@ -206,7 +226,7 @@ export default function ContactForm() {
           className={`w-full px-4 py-3 rounded-md border transition outline-none ${
             errors.email
               ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200"
-              : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20"
+              : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20 text-black"
           }`}
           placeholder="your@email.com"
           autoComplete="email"
@@ -221,33 +241,51 @@ export default function ContactForm() {
           htmlFor="phone"
           className="block text-sm font-medium text-gray-700 mb-2"
         >
-          Phone Number
+          Phone Number *
         </label>
         <div className="flex gap-2">
-          <select
-            value={formData.countryCode}
-            onChange={handleCountryCodeChange}
-            className="px-3 py-3 rounded-md border border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20 outline-none transition bg-white"
-            aria-label="Country code"
-          >
-            {COUNTRY_CODES.map((item) => (
-              <option key={item.code} value={item.code}>
-                {item.flag} {item.code}
-              </option>
-            ))}
-          </select>
+          <div className="relative">
+            <select
+              value={formData.countryCode}
+              onChange={handleCountryCodeChange}
+              className="pl-10 pr-3 py-3 rounded-md border border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20 outline-none transition bg-white text-black appearance-none cursor-pointer"
+              aria-label="Country code"
+              style={{ minWidth: "120px" }}
+            >
+              {COUNTRY_CODES.map((item) => (
+                <option key={item.code} value={item.code}>
+                  {item.flag} {item.code}
+                </option>
+              ))}
+            </select>
+            {COUNTRY_CODES.find((c) => c.code === formData.countryCode)
+              ?.iso && (
+              <img
+                src={getCountryFlagUrlByIso(
+                  COUNTRY_CODES.find((c) => c.code === formData.countryCode)
+                    ?.iso || "",
+                )}
+                alt="Flag"
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-4 object-cover rounded pointer-events-none"
+              />
+            )}
+          </div>
           <input
             type="tel"
-            id="phone"
+            id="modal-phone"
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className={`flex-1 px-4 py-3 rounded-md border transition outline-none ${
+            required
+            maxLength={15}
+            inputMode="numeric"
+            pattern="[0-9]*"
+            className={`flex-1 px-3 py-2 rounded-md border text-sm transition outline-none ${
               errors.phone
                 ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200"
-                : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20"
+                : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20 text-black"
             }`}
-            placeholder="XX XXX XXXX"
+            placeholder="XXXXXXXXXX"
             autoComplete="tel"
           />
         </div>
@@ -272,15 +310,17 @@ export default function ContactForm() {
           className={`w-full px-4 py-3 rounded-md border transition outline-none ${
             errors.subject
               ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200"
-              : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20"
+              : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20 text-black"
           }`}
         >
           <option value="">Select a subject</option>
-          <option value="quote">Request a Quote</option>
-          <option value="product">Product Inquiry</option>
-          <option value="support">Customer Support</option>
-          <option value="partnership">Partnership Opportunity</option>
-          <option value="other">Other</option>
+          <option value="Request a Quote">Request a Quote</option>
+          <option value="Product Inquiry">Product Inquiry</option>
+          <option value="Customer Support">Customer Support</option>
+          <option value="Partnership Opportunity">
+            Partnership Opportunity
+          </option>
+          <option value="Other">Other</option>
         </select>
         {errors.subject && (
           <p className="text-red-500 text-sm mt-1">{errors.subject}</p>
@@ -304,7 +344,7 @@ export default function ContactForm() {
           className={`w-full px-4 py-3 rounded-md border transition outline-none resize-none ${
             errors.message
               ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200"
-              : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20"
+              : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20 text-black"
           }`}
           placeholder="Tell us about your requirements..."
         ></textarea>

@@ -130,7 +130,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-1 text-timber-dark-brown">
-                      Location
+                      Address
                     </h3>
                     <p className="text-gray-700">
                       Suite 503, Platinum Business Centre, Baghdad Street, 7A
@@ -170,7 +170,7 @@ export default function ContactPage() {
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1645.7842233837334!2d55.368363477169545!3d25.28764736457379!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d74f09a13cd%3A0x87d257dd32a62e81!2sPlatinum%20Business%20Centre!5e1!3m2!1sen!2sus!4v1768394646358!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2327.4896187131453!2d55.36836780703986!3d25.287686482905233!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c6622ae72ef%3A0x3c24362fcd8e22ea!2sAfcon%20General%20Trading%20LLC%20%7C%2004%20251%202418!5e1!3m2!1sen!2sae!4v1768974517457!5m2!1sen!2sae"
             ></iframe>
           </div>
           <div className="mt-8 text-center">

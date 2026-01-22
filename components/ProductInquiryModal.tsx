@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { X } from "lucide-react";
-import { COUNTRY_CODES } from "@/lib/countryCodess";
+import { COUNTRY_CODES, getCountryFlagUrlByIso } from "@/lib/countryCodess";
 
 interface ProductInquiryFormProps {
   productName: string;
@@ -42,18 +42,17 @@ export default function ProductInquiryModal({
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
 
-    // Name validation
     if (!formData.name.trim()) {
       newErrors.name = "Full name is required";
     } else if (formData.name.trim().length < 2) {
       newErrors.name = "Name must be at least 2 characters";
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
@@ -61,22 +60,20 @@ export default function ProductInquiryModal({
       newErrors.email = "Please enter a valid email address";
     }
 
-    // Phone validation (if provided)
     if (formData.phone) {
-      const phoneRegex = /^[0-9\s\-\+\(\)]{7,}$/;
+      const phoneRegex = /^[0-9]{7,15}$/;
       if (!phoneRegex.test(formData.phone)) {
-        newErrors.phone = "Please enter a valid phone number";
+        newErrors.phone =
+          "Please enter a valid phone number (7-15 digits only)";
       }
     }
 
-    // Quantity validation
     if (!formData.quantity.trim()) {
       newErrors.quantity = "Quantity is required";
-    } else if (!/^\d+(\.\d{1,2})?$/.test(formData.quantity)) {
-      newErrors.quantity = "Please enter a valid quantity";
+    } else if (!/^\d{1,5}$/.test(formData.quantity)) {
+      newErrors.quantity = "Please enter a valid quantity (max 5 digits)";
     }
 
-    // Message validation (optional but if provided, must be 5+ chars)
     if (formData.message && formData.message.trim().length < 5) {
       newErrors.message = "Message must be at least 5 characters if provided";
     }
@@ -88,20 +85,27 @@ export default function ProductInquiryModal({
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
+
+    // Filter non-numeric characters for phone and quantity fields
+    let processedValue = value;
+    if (name === "phone" || name === "quantity") {
+      processedValue = value.replace(/[^0-9]/g, "");
+    }
+
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: processedValue,
     }));
-    // Clear error for this field
     if (errors[name as keyof FormErrors]) {
       setErrors((prev) => ({
         ...prev,
         [name]: undefined,
       }));
     }
+    setSubmitError("");
   };
 
   const handleCountryCodeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -119,24 +123,30 @@ export default function ProductInquiryModal({
     }
 
     setIsLoading(true);
+    setSubmitError("");
 
     try {
-      // Secure payload creation
-      const payload = {
-        productName: productName.trim(),
-        name: formData.name.trim(),
-        email: formData.email.toLowerCase().trim(),
-        phone: formData.countryCode + " " + formData.phone.trim(),
-        quantity: formData.quantity.trim(),
-        message: formData.message.trim(),
-        timestamp: new Date().toISOString(),
-      };
+      const response = await fetch("https://formspree.io/f/mnjjzrgj", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          product: productName.trim(),
+          name: formData.name.trim(),
+          email: formData.email.toLowerCase().trim(),
+          phone: formData.countryCode + " " + formData.phone.trim(),
+          quantity: formData.quantity.trim(),
+          message: formData.message.trim(),
+          _replyto: formData.email.toLowerCase().trim(),
+          _subject: `TimberSouq Product Inquiry: ${productName}`,
+        }),
+      });
 
-      // Here you would send to your backend
-      console.log("Product inquiry submission:", payload);
-
-      // Simulate network delay
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      if (!response.ok) {
+        throw new Error("Failed to send inquiry");
+      }
 
       setSubmitted(true);
       setFormData({
@@ -148,17 +158,15 @@ export default function ProductInquiryModal({
         countryCode: "+971",
       });
 
-      // Close modal after success
       setTimeout(() => {
         setSubmitted(false);
         onClose();
       }, 3000);
     } catch (error) {
       console.error("Form submission error:", error);
-      setErrors({
-        ...errors,
-        message: "Failed to send inquiry. Please try again.",
-      });
+      setSubmitError(
+        "Failed to send inquiry. Please try again or email us at info@timbersouq.com",
+      );
     } finally {
       setIsLoading(false);
     }
@@ -167,7 +175,6 @@ export default function ProductInquiryModal({
   return (
     <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
-        {/* Header */}
         <div className="sticky top-0 bg-timber-green text-white p-6 flex items-center justify-between">
           <h2 className="text-xl font-display font-bold">
             Inquiry for {productName}
@@ -181,7 +188,6 @@ export default function ProductInquiryModal({
           </button>
         </div>
 
-        {/* Form */}
         <form onSubmit={handleSubmit} className="p-6 space-y-5">
           {submitted && (
             <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
@@ -192,7 +198,12 @@ export default function ProductInquiryModal({
             </div>
           )}
 
-          {/* Name */}
+          {submitError && (
+            <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
+              <p className="text-xs">{submitError}</p>
+            </div>
+          )}
+
           <div>
             <label
               htmlFor="modal-name"
@@ -210,7 +221,7 @@ export default function ProductInquiryModal({
               className={`w-full px-3 py-2 rounded-md border text-sm transition outline-none ${
                 errors.name
                   ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200"
-                  : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20"
+                  : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20 text-black"
               }`}
               placeholder="Your name"
               autoComplete="name"
@@ -220,7 +231,6 @@ export default function ProductInquiryModal({
             )}
           </div>
 
-          {/* Email */}
           <div>
             <label
               htmlFor="modal-email"
@@ -238,7 +248,7 @@ export default function ProductInquiryModal({
               className={`w-full px-3 py-2 rounded-md border text-sm transition outline-none ${
                 errors.email
                   ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200"
-                  : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20"
+                  : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20 text-black"
               }`}
               placeholder="your@email.com"
               autoComplete="email"
@@ -248,37 +258,54 @@ export default function ProductInquiryModal({
             )}
           </div>
 
-          {/* Phone */}
           <div>
             <label
               htmlFor="modal-phone"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Phone Number
+              Phone Number *
             </label>
             <div className="flex gap-2">
-              <select
-                value={formData.countryCode}
-                onChange={handleCountryCodeChange}
-                className="px-2 py-2 rounded-md border border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20 outline-none transition bg-white text-sm text-black"
-                aria-label="Country code"
-              >
-                {COUNTRY_CODES.map((item) => (
-                  <option key={item.code} value={item.code}>
-                    {item.flag} {item.code}
-                  </option>
-                ))}
-              </select>
+              <div className="relative">
+                <select
+                  value={formData.countryCode}
+                  onChange={handleCountryCodeChange}
+                  className="pl-9 pr-2 py-2 rounded-md border border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20 outline-none transition bg-white text-sm text-black cursor-pointer"
+                  aria-label="Country code"
+                  style={{ minWidth: "110px" }}
+                >
+                  {COUNTRY_CODES.map((item) => (
+                    <option key={item.code} value={item.code}>
+                      {item.flag} {item.code}
+                    </option>
+                  ))}
+                </select>
+                {COUNTRY_CODES.find((c) => c.code === formData.countryCode)
+                  ?.iso && (
+                  <img
+                    src={getCountryFlagUrlByIso(
+                      COUNTRY_CODES.find((c) => c.code === formData.countryCode)
+                        ?.iso || "",
+                    )}
+                    alt="Flag"
+                    className="absolute left-2 top-1/2 -translate-y-1/2 w-5 h-3.5 object-cover rounded pointer-events-none"
+                  />
+                )}
+              </div>
               <input
                 type="tel"
                 id="modal-phone"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
+                required
+                maxLength={15}
+                inputMode="numeric"
+                pattern="[0-9]*"
                 className={`flex-1 px-3 py-2 rounded-md border text-sm transition outline-none ${
                   errors.phone
                     ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200"
-                    : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20"
+                    : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20 text-black"
                 }`}
                 placeholder="XXXXXXXXXX"
                 autoComplete="tel"
@@ -289,7 +316,6 @@ export default function ProductInquiryModal({
             )}
           </div>
 
-          {/* Quantity */}
           <div>
             <label
               htmlFor="modal-quantity"
@@ -304,19 +330,21 @@ export default function ProductInquiryModal({
               value={formData.quantity}
               onChange={handleChange}
               required
+              maxLength={5}
+              inputMode="numeric"
+              pattern="[0-9]*"
               className={`w-full px-3 py-2 rounded-md border text-sm transition outline-none ${
                 errors.quantity
                   ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200"
-                  : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20"
+                  : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20 text-black"
               }`}
-              placeholder="e.g., 100 units"
+              placeholder="e.g., 100"
             />
             {errors.quantity && (
               <p className="text-red-500 text-xs mt-1">{errors.quantity}</p>
             )}
           </div>
 
-          {/* Message */}
           <div>
             <label
               htmlFor="modal-message"
@@ -333,7 +361,7 @@ export default function ProductInquiryModal({
               className={`w-full px-3 py-2 rounded-md border text-sm transition outline-none resize-none ${
                 errors.message
                   ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200"
-                  : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20"
+                  : "border-gray-300 focus:border-timber-green focus:ring-2 focus:ring-timber-green/20 text-black"
               }`}
               placeholder="Any specific requirements or questions..."
             ></textarea>
@@ -342,7 +370,6 @@ export default function ProductInquiryModal({
             )}
           </div>
 
-          {/* Submit */}
           <button
             type="submit"
             disabled={isLoading}

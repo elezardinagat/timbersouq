@@ -12,6 +12,7 @@ import {
   MessageSquare,
   Package,
 } from "lucide-react";
+import { COUNTRY_CODES, getCountryFlagUrlByIso } from "@/lib/countryCodess";
 
 // WhatsApp number - update this to your actual business number
 const WHATSAPP_NUMBER = "971526443782";
@@ -33,6 +34,8 @@ export default function ProductCard({ product }: ProductCardProps) {
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error"
   >("idle");
+  const [countryCode, setCountryCode] = useState("+971");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -43,7 +46,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     const data = {
       name: formData.get("name"),
       email: formData.get("email"),
-      phone: formData.get("phone"),
+      phone: countryCode + " " + phoneNumber,
       product: product.name,
       message: formData.get("message"),
     };
@@ -125,7 +128,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           <div className="flex flex-col xs:flex-row gap-2 sm:gap-3 pt-1 sm:pt-2">
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-                `Hi, I'm interested in ${product.name}. Please provide more details.`
+                `Hi, I'm interested in ${product.name}. Please provide more details.`,
               )}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -210,7 +213,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                   <div className="space-y-2">
                     <label className="flex items-center gap-2 text-sm font-semibold text-gray-700">
                       <User className="w-4 h-4 text-timber-green" />
-                      Full Name
+                      Full Name *
                     </label>
                     <input
                       type="text"
@@ -225,7 +228,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                   <div className="space-y-2">
                     <label className="flex items-center gap-2 text-sm font-semibold text-gray-700">
                       <Mail className="w-4 h-4 text-timber-green" />
-                      Email Address
+                      Email Address *
                     </label>
                     <input
                       type="email"
@@ -240,15 +243,50 @@ export default function ProductCard({ product }: ProductCardProps) {
                   <div className="space-y-2">
                     <label className="flex items-center gap-2 text-sm font-semibold text-gray-700">
                       <Phone className="w-4 h-4 text-timber-green" />
-                      Phone Number
+                      Phone Number *
                     </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      required
-                      placeholder="Enter your phone number"
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-timber-green focus:ring-4 focus:ring-timber-green/10 outline-none transition-all duration-300 text-gray-800 placeholder:text-gray-400"
-                    />
+                    <div className="flex gap-2">
+                      <div className="relative">
+                        <select
+                          value={countryCode}
+                          onChange={(e) => setCountryCode(e.target.value)}
+                          className="pl-11 pr-3 py-3 border-2 border-gray-200 rounded-xl focus:border-timber-green focus:ring-4 focus:ring-timber-green/10 outline-none transition-all duration-300 bg-white text-gray-800 cursor-pointer"
+                          aria-label="Country code"
+                          style={{ minWidth: "130px" }}
+                        >
+                          {COUNTRY_CODES.map((item) => (
+                            <option key={item.code} value={item.code}>
+                              {item.flag} {item.code}
+                            </option>
+                          ))}
+                        </select>
+                        {COUNTRY_CODES.find((c) => c.code === countryCode)
+                          ?.iso && (
+                          <img
+                            src={getCountryFlagUrlByIso(
+                              COUNTRY_CODES.find((c) => c.code === countryCode)
+                                ?.iso || "",
+                            )}
+                            alt="Flag"
+                            className="absolute left-3 top-1/2 -translate-y-1/2 w-6 h-4 object-cover rounded pointer-events-none"
+                          />
+                        )}
+                      </div>
+                      <input
+                        type="tel"
+                        value={phoneNumber}
+                        onChange={(e) => {
+                          const value = e.target.value.replace(/[^0-9]/g, "");
+                          setPhoneNumber(value);
+                        }}
+                        required
+                        maxLength={15}
+                        inputMode="numeric"
+                        pattern="[0-9]*"
+                        placeholder="Enter your phone number"
+                        className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-timber-green focus:ring-4 focus:ring-timber-green/10 outline-none transition-all duration-300 text-gray-800 placeholder:text-gray-400"
+                      />
+                    </div>
                   </div>
 
                   {/* Product (Read-only) */}
@@ -258,7 +296,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                       className="flex items-center gap-2 text-sm font-semibold text-gray-700"
                     >
                       <Package className="w-4 h-4 text-timber-green" />
-                      Product
+                      Product *
                     </label>
                     <input
                       type="text"
@@ -274,7 +312,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                   <div className="space-y-2">
                     <label className="flex items-center gap-2 text-sm font-semibold text-gray-700">
                       <MessageSquare className="w-4 h-4 text-timber-green" />
-                      Message
+                      Message *
                     </label>
                     <textarea
                       name="message"

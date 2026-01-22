@@ -58,11 +58,15 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
             <p>
-              TimberSouq is a leading supplier of premium timber and wood
-              products, serving contractors, suppliers, and construction
-              businesses across the region. With years of industry experience
-              and deep expertise in timber sourcing and distribution, we have
-              built a reputation for reliability and quality.
+              TimberSouq, operating under the management of{" "}
+              <strong className="text-timber-dark-brown">
+                Afcon General Trading LLC
+              </strong>
+              , is a leading supplier of premium timber and wood products,
+              serving contractors, suppliers, and construction businesses across
+              the region. With years of industry experience and deep expertise
+              in timber sourcing and distribution, we have built a reputation
+              for reliability and quality.
             </p>
             <p>
               Our journey began with a simple mission: to provide construction
