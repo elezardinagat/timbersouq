@@ -81,70 +81,70 @@ const newsArticles = [
     image:
       "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80",
   },
-  {
-    id: "new-products-2026",
-    title: "Introducing TimberSouq's New Product Range for 2026",
-    date: "January 10, 2026",
-    category: "Product Launch",
-    icon: Package,
-    summary:
-      "Exciting new additions to our product lineup! Enhanced quality, better performance, and competitive pricing.",
-    content: `
-      TimberSouq is thrilled to introduce our expanded product range for 2026, designed to meet the evolving needs of the construction and interior design industries.
+  // {
+  //   id: "new-products-2026",
+  //   title: "Introducing TimberSouq's New Product Range for 2026",
+  //   date: "January 10, 2026",
+  //   category: "Product Launch",
+  //   icon: Package,
+  //   summary:
+  //     "Exciting new additions to our product lineup! Enhanced quality, better performance, and competitive pricing.",
+  //   content: `
+  //     TimberSouq is thrilled to introduce our expanded product range for 2026, designed to meet the evolving needs of the construction and interior design industries.
 
-      **New Products Available Now:**
+  //     **New Products Available Now:**
 
-      **1. Premium Grade Film Faced Plywood**
-      - Enhanced water resistance with 40+ reuse cycles
-      - Superior surface finish for cleaner concrete pours
-      - Available in 12mm, 15mm, 18mm, and 21mm thickness
-      - Ideal for high-rise construction and bridge projects
+  //     **1. Premium Grade Film Faced Plywood**
+  //     - Enhanced water resistance with 40+ reuse cycles
+  //     - Superior surface finish for cleaner concrete pours
+  //     - Available in 12mm, 15mm, 18mm, and 21mm thickness
+  //     - Ideal for high-rise construction and bridge projects
 
-      **2. Advanced LVL Scaffold Boards**
-      - Higher load capacity: up to 300kg
-      - Extended length options up to 5.0m
-      - Weather-resistant coating for outdoor use
-      - Meets international safety standards (BS 2482, EN 13374)
+  //     **2. Advanced LVL Scaffold Boards**
+  //     - Higher load capacity: up to 300kg
+  //     - Extended length options up to 5.0m
+  //     - Weather-resistant coating for outdoor use
+  //     - Meets international safety standards (BS 2482, EN 13374)
 
-      **3. Hardboard Premium Collection**
-      - Smooth surface finish perfect for interior applications
-      - Moisture-resistant variants for humid environments
-      - Available in standard and custom sizes
-      - Excellent for furniture backing and paneling
+  //     **3. Hardboard Premium Collection**
+  //     - Smooth surface finish perfect for interior applications
+  //     - Moisture-resistant variants for humid environments
+  //     - Available in standard and custom sizes
+  //     - Excellent for furniture backing and paneling
 
-      **4. Commercial Grade White Wood**
-      - PEFC certified sustainable sourcing
-      - Kiln-dried for optimal moisture content (10-12%)
-      - Superior grain consistency
-      - Available in S4S (surfaced four sides) finish
+  //     **4. Commercial Grade White Wood**
+  //     - PEFC certified sustainable sourcing
+  //     - Kiln-dried for optimal moisture content (10-12%)
+  //     - Superior grain consistency
+  //     - Available in S4S (surfaced four sides) finish
 
-      **5. Heavy-Duty H20 Timber Beams**
-      - Reinforced design for maximum load distribution
-      - Compatible with all major formwork systems
-      - Extended lifespan with protective coating
-      - Lightweight yet incredibly strong
+  //     **5. Heavy-Duty H20 Timber Beams**
+  //     - Reinforced design for maximum load distribution
+  //     - Compatible with all major formwork systems
+  //     - Extended lifespan with protective coating
+  //     - Lightweight yet incredibly strong
 
-      **Coming Soon in Q2 2026:**
-      - Marine-grade plywood for coastal projects
-      - Exotic hardwood options for luxury interiors
-      - Custom-cut timber services with 24-hour turnaround
-      - Fire-retardant treated wood solutions
+  //     **Coming Soon in Q2 2026:**
+  //     - Marine-grade plywood for coastal projects
+  //     - Exotic hardwood options for luxury interiors
+  //     - Custom-cut timber services with 24-hour turnaround
+  //     - Fire-retardant treated wood solutions
 
-      **Special Launch Offers:**
-      - 15% discount on bulk orders (minimum 500 sheets/boards)
-      - Free delivery within Dubai for orders above AED 10,000
-      - Extended payment terms for repeat customers
-      - Complimentary technical consultation for large projects
+  //     **Special Launch Offers:**
+  //     - 15% discount on bulk orders (minimum 500 sheets/boards)
+  //     - Free delivery within Dubai for orders above AED 10,000
+  //     - Extended payment terms for repeat customers
+  //     - Complimentary technical consultation for large projects
 
-      All our new products maintain our commitment to quality, sustainability, and competitive pricing. Each item undergoes rigorous quality checks and comes with our satisfaction guarantee.
+  //     All our new products maintain our commitment to quality, sustainability, and competitive pricing. Each item undergoes rigorous quality checks and comes with our satisfaction guarantee.
 
-      **Get Samples**: Contact us to request product samples and technical specifications. Our team is ready to help you choose the right materials for your project.
+  //     **Get Samples**: Contact us to request product samples and technical specifications. Our team is ready to help you choose the right materials for your project.
 
-      Visit our products page or contact our sales team for detailed specifications, pricing, and availability.
-    `,
-    image:
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80",
-  },
+  //     Visit our products page or contact our sales team for detailed specifications, pricing, and availability.
+  //   `,
+  //   image:
+  //     "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80",
+  // },
 ];
 
 export default function NewsPage() {

@@ -314,6 +314,9 @@ export default function ContactForm() {
           }`}
         >
           <option value="">Select a subject</option>
+          <option value="Wood Expo Dubai 2026 Exclusive Offers">
+            Wood Expo Dubai 2026 Exclusive Offers
+          </option>
           <option value="Request a Quote">Request a Quote</option>
           <option value="Product Inquiry">Product Inquiry</option>
           <option value="Customer Support">Customer Support</option>
