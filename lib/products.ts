@@ -26,6 +26,7 @@ export const products = [
       "Width: 225mm",
       "Length: 1m to 4mm",
       "Thickness: 38mm",
+      "Stock Availability: In Stock",
     ],
   },
   {
@@ -55,6 +56,7 @@ export const products = [
       "Width: 2inch to 12inch",
       "Length: 10ft to 13ft",
       "Thickness: 1inch to 4inch",
+      "Stock Availability: In Stock",
     ],
   },
   {
@@ -84,6 +86,7 @@ export const products = [
       "Width: 225mm",
       "Length: 1m to 4m",
       "Thickness: 38mm",
+      "Stock Availability: In Stock",
     ],
   },
   {
@@ -113,6 +116,7 @@ export const products = [
       "Width: 225mm",
       "Length: 1m to 4m",
       "Thickness: 38mm",
+      "Stock Availability: In Stock",
     ],
   },
   {
@@ -144,6 +148,7 @@ export const products = [
       "Core Width: 80mm",
       "Length: 1.9m to 5.9m",
       "Packaging: 100pcs/bundle | 105pcs/bundle",
+      "Stock Availability: In Stock",
     ],
   },
   {
@@ -173,6 +178,7 @@ export const products = [
       "Width: 1220mm",
       "Length: 2440mm",
       "Thickness: 2.4mm to 13mm",
+      "Stock Availability: In Stock",
     ],
   },
   {
@@ -202,6 +208,7 @@ export const products = [
       "Width: 1220mm",
       "Length: 2440mm",
       "Thickness: 2.5mm to 24mm",
+      "Stock Availability: In Stock",
     ],
   },
 ];
