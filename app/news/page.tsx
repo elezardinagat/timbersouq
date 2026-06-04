@@ -41,16 +41,16 @@ const newsArticles = [
   },
   {
     id: "wood-expo-dubai-2026-announcement",
-    title: "Save the Date: Wood Expo Dubai 2026 - April Edition",
-    date: "April 21-23, 2026",
+    title: "Save the Date: Wood Expo Dubai 2026 - June Edition",
+    date: "June 22-24, 2026",
     category: "Upcoming Event",
     icon: Calendar,
     summary:
-      "Join us at Wood Expo Dubai 2026 this April! Discover new products, exclusive deals, and innovative timber solutions.",
+      "Join us at Wood Expo Dubai 2026 this June! Discover new products, exclusive deals, and innovative timber solutions.",
     content: `
       **Mark Your Calendars!**
       
-      TimberSouq is excited to announce our participation in the upcoming **Wood Expo Dubai 2026**, scheduled for **April 21-23, 2026** at the Dubai World Trade Centre.
+      TimberSouq is excited to announce our participation in the upcoming **Wood Expo Dubai 2026**, scheduled for **June 22-24, 2026** at the Dubai World Trade Centre.
 
       **What to Expect:**
       
@@ -69,8 +69,7 @@ const newsArticles = [
       **Booth Location**: To be announced soon. Stay tuned for updates!
       
       **Event Details:**
-      - Date: April 21-23, 2026 - date not finalized
-      - Time: 10:00 AM - 7:00 PM daily
+      - Date: June 22-24, 2026
       - Venue: Dubai World Trade Centre
       - Entry: Free registration (limited spots available)
 
