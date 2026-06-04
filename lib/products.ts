@@ -24,7 +24,7 @@ export const products = [
     specifications: [
       "Origin: China(OSHA Standard)",
       "Width: 225mm",
-      "Length: 1m to 4mm",
+      "Length: 1meter to 4meter",
       "Thickness: 38mm",
       "Stock Availability: In Stock",
     ],
