@@ -211,6 +211,96 @@ export const products = [
       "Stock Availability: In Stock",
     ],
   },
+  {
+    slug: "gi-plain-sheets",
+    name: "GI Plain Sheets",
+    fullName: "Galvanized Iron Plain Sheets",
+    description: "Corrosion-resistant galvanized iron sheets for construction",
+    image: "/timbersouq/images/products/gi-plain-sheets.jpg",
+    detailedDescription:
+      "Galvanized Iron (GI) Plain Sheets are steel sheets coated with a layer of zinc to prevent rust and corrosion. They are widely used in roofing, cladding, and general construction due to their durability and long service life.",
+    features: [
+      "Zinc-coated for corrosion resistance",
+      "High tensile strength",
+      "Lightweight and easy to handle",
+      "Long service life",
+      "Available in various gauges",
+    ],
+    applications: [
+      "Roofing and cladding",
+      "Ductwork and ventilation",
+      "Wall and ceiling panels",
+      "Industrial enclosures",
+      "General fabrication",
+    ],
+    specifications: [
+      "Origin: China, India",
+      "Width: 1000mm / 1220mm",
+      "Length: 2440mm",
+      "Thickness: 0.3mm to 3mm",
+      "Stock Availability: In Stock",
+    ],
+  },
+  {
+    slug: "iron-rebar",
+    name: "Iron Rebar",
+    fullName: "Deformed Steel Reinforcement Bar",
+    description: "High-strength steel bars for concrete reinforcement",
+    image: "/timbersouq/images/products/iron-rebar.jpg",
+    detailedDescription:
+      "Iron Rebar (reinforcing bar) is a deformed steel bar used to reinforce concrete structures. The ribbed surface provides superior bonding with concrete, enhancing tensile strength and structural integrity in buildings, bridges, and infrastructure.",
+    features: [
+      "High yield strength",
+      "Deformed surface for superior concrete bonding",
+      "Excellent ductility",
+      "Weldable grade available",
+      "Compliant with international standards",
+    ],
+    applications: [
+      "Reinforced concrete slabs",
+      "Columns and beams",
+      "Foundation and footings",
+      "Retaining walls",
+      "Bridge and infrastructure construction",
+    ],
+    specifications: [
+      "Origin: UAE, Turkey, China",
+      "Diameter: 8mm to 32mm",
+      "Length: 6m / 12m",
+      "Grade: Grade 60 / BS4449",
+      "Stock Availability: In Stock",
+    ],
+  },
+  {
+    slug: "red-wood",
+    name: "Red Wood",
+    fullName: "Premium Redwood Timber",
+    description: "Durable and naturally beautiful redwood for construction and joinery",
+    image: "/timbersouq/images/products/red-wood.jpg",
+    detailedDescription:
+      "Redwood timber is prized for its rich reddish-brown color, natural durability, and resistance to decay. Sourced from sustainable forests, it is an excellent choice for both structural and decorative applications, offering a premium finish that stands the test of time.",
+    features: [
+      "Natural decay and insect resistance",
+      "Rich, warm reddish-brown tone",
+      "Stable and low shrinkage",
+      "Easy to machine and finish",
+      "Sustainably sourced",
+    ],
+    applications: [
+      "Outdoor decking and cladding",
+      "Doors and window frames",
+      "Furniture and joinery",
+      "Interior paneling",
+      "Structural framing",
+    ],
+    specifications: [
+      "Origin: USA, Scandinavia",
+      "Width: 2inch to 12inch",
+      "Length: 8ft to 16ft",
+      "Thickness: 1inch to 4inch",
+      "Stock Availability: In Stock",
+    ],
+  },
 ];
 
 export const siteSettings = {
