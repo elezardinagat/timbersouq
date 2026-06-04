@@ -24,7 +24,7 @@ export const products = [
     specifications: [
       "Origin: China(OSHA Standard)",
       "Width: 225mm",
-      "Length: 1m to 4mm",
+      "Length: 1meter to 4meter",
       "Thickness: 38mm",
       "Stock Availability: In Stock",
     ],
@@ -113,9 +113,9 @@ export const products = [
     ],
     specifications: [
       "Origin: Indonesia, China, Malaysia",
-      "Width: 225mm",
-      "Length: 1m to 4m",
-      "Thickness: 38mm",
+      "Width: 1220mm",
+      "Length: 2440mm",
+      "Thickness: 2.5mm to 24mm",
       "Stock Availability: In Stock",
     ],
   },
