@@ -216,7 +216,7 @@ export const products = [
     name: "GI Plain Sheets",
     fullName: "Galvanized Iron Plain Sheets",
     description: "Corrosion-resistant galvanized iron sheets for construction",
-    image: "/timbersouq/images/products/gi-plain-sheets.jpg",
+    image: "/timbersouq/images/products/gi-plain-sheets.webp",
     detailedDescription:
       "Galvanized Iron (GI) Plain Sheets are steel sheets coated with a layer of zinc to prevent rust and corrosion. They are widely used in roofing, cladding, and general construction due to their durability and long service life.",
     features: [
@@ -246,7 +246,7 @@ export const products = [
     name: "Iron Rebar",
     fullName: "Deformed Steel Reinforcement Bar",
     description: "High-strength steel bars for concrete reinforcement",
-    image: "/timbersouq/images/products/iron-rebar.jpg",
+    image: "/timbersouq/images/products/iron-rebar.webp",
     detailedDescription:
       "Iron Rebar (reinforcing bar) is a deformed steel bar used to reinforce concrete structures. The ribbed surface provides superior bonding with concrete, enhancing tensile strength and structural integrity in buildings, bridges, and infrastructure.",
     features: [
@@ -275,7 +275,8 @@ export const products = [
     slug: "red-wood",
     name: "Red Wood",
     fullName: "Premium Redwood Timber",
-    description: "Durable and naturally beautiful redwood for construction and joinery",
+    description:
+      "Durable and naturally beautiful redwood for construction and joinery",
     image: "/timbersouq/images/products/red-wood.jpg",
     detailedDescription:
       "Redwood timber is prized for its rich reddish-brown color, natural durability, and resistance to decay. Sourced from sustainable forests, it is an excellent choice for both structural and decorative applications, offering a premium finish that stands the test of time.",
