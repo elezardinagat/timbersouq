@@ -22,10 +22,11 @@ export const products = [
       "Floor and roof systems",
     ],
     specifications: [
-      "Origin: Austria, China",
+      "Origin: China(OSHA Standard)",
       "Width: 225mm",
       "Length: 1m to 4mm",
       "Thickness: 38mm",
+      "Stock Availability: In Stock",
     ],
   },
   {
@@ -51,10 +52,11 @@ export const products = [
       "General carpentry",
     ],
     specifications: [
-      "Origin:	Romania, Austria, Germany, Chile",
+      "Origin:	Austria, Germany, Romania",
       "Width: 2inch to 12inch",
       "Length: 10ft to 13ft",
       "Thickness: 1inch to 4inch",
+      "Stock Availability: In Stock",
     ],
   },
   {
@@ -84,6 +86,7 @@ export const products = [
       "Width: 225mm",
       "Length: 1m to 4m",
       "Thickness: 38mm",
+      "Stock Availability: In Stock",
     ],
   },
   {
@@ -109,10 +112,11 @@ export const products = [
       "Bridge construction",
     ],
     specifications: [
-      "Origin: Austria",
+      "Origin: Indonesia, China, Malaysia",
       "Width: 225mm",
       "Length: 1m to 4m",
       "Thickness: 38mm",
+      "Stock Availability: In Stock",
     ],
   },
   {
@@ -138,12 +142,13 @@ export const products = [
       "Bridge deck construction",
     ],
     specifications: [
-      "Origin: Austria",
+      "Origin: Europe",
       "Width: 200mm",
       "Cord: 40mm(Lower & Upper Element)",
       "Core Width: 80mm",
       "Length: 1.9m to 5.9m",
       "Packaging: 100pcs/bundle | 105pcs/bundle",
+      "Stock Availability: In Stock",
     ],
   },
   {
@@ -169,10 +174,11 @@ export const products = [
       "Craft and DIY projects",
     ],
     specifications: [
-      "Origin: Thailand, Brazil, India, China",
+      "Origin: Thailand, India, China",
       "Width: 1220mm",
       "Length: 2440mm",
       "Thickness: 2.4mm to 13mm",
+      "Stock Availability: In Stock",
     ],
   },
   {
@@ -198,10 +204,11 @@ export const products = [
       "Packaging and crating",
     ],
     specifications: [
-      "Origin: Austria, China, Malaysia",
+      "Origin: China, Malaysia",
       "Width: 1220mm",
       "Length: 2440mm",
       "Thickness: 2.5mm to 24mm",
+      "Stock Availability: In Stock",
     ],
   },
 ];
