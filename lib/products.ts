@@ -4,7 +4,7 @@ export const products = [
     name: "LVL Board",
     fullName: "Laminated Veneer Lumber Board",
     description: "High-strength engineered wood for structural applications",
-    image: "/timbersouq/images/products/lvl-board.jpg",
+    image: "/timbersouq/images/products/lvl-board.webp",
     detailedDescription:
       "LVL (Laminated Veneer Lumber) is an engineered wood product that uses multiple layers of thin wood assembled with adhesives. It offers superior strength and stability compared to conventional lumber, making it ideal for structural applications in construction.",
     features: [
