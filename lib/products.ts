@@ -64,7 +64,7 @@ export const products = [
     name: "Scaffolding Board",
     fullName: "Scaffolding Board / Plank",
     description: "Durable boards for safe scaffolding systems",
-    image: "/timbersouq/images/products/scaffolding-board.jpg",
+    image: "/timbersouq/images/products/scaffolding-board.webp",
     detailedDescription:
       "Our scaffolding boards are manufactured to meet strict safety standards for construction scaffolding. Made from strong, treated timber, they provide a safe working platform for construction workers at height.",
     features: [
