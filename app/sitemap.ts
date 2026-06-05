@@ -7,8 +7,10 @@ export default function sitemap() {
     "scaffolding-board",
     "film-faced-plywood",
     "h20-beam",
-    "hardboard",
     "commercial-plywood",
+    "Galvanized Iron (GI) Sheets",
+    "Iron Rebar",
+    "Red Wood",
   ];
 
   const productUrls = products.map((slug) => ({
