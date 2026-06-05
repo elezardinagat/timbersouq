@@ -71,9 +71,12 @@ export default function HomePage() {
         <div
           className="absolute inset-0 hero-animated-bg"
           style={{
+            // backgroundImage:
+            //   "linear-gradient(135deg, rgba(141, 90, 60, 0.45) 0%, rgba(30, 64, 45, 0.55) 50%, rgba(44, 44, 44, 0.55) 100%)",
+            // mixBlendMode: "multiply",
             backgroundImage:
-              "linear-gradient(135deg, rgba(141, 90, 60, 0.45) 0%, rgba(30, 64, 45, 0.55) 50%, rgba(44, 44, 44, 0.55) 100%)",
-            mixBlendMode: "multiply",
+              "linear-gradient(63deg, rgb(141 90 60 / 0%) 0%, rgb(30 64 45 / 0%) 50%, rgba(44, 44, 44, 0.55) 100%)",
+            mixBlendMode: "color-dodge",
           }}
         ></div>
 
