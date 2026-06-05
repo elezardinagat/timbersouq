@@ -216,7 +216,7 @@ export const products = [
     name: "GI Plain Sheets",
     fullName: "Galvanized Iron Plain Sheets",
     description: "Corrosion-resistant galvanized iron sheets for construction",
-    image: "/timbersouq/images/products/gi-plain-sheets.webp",
+    image: "/timbersouq/images/products/galvanized-iron-sheets.webp",
     detailedDescription:
       "Galvanized Iron (GI) Plain Sheets are steel sheets coated with a layer of zinc to prevent rust and corrosion. They are widely used in roofing, cladding, and general construction due to their durability and long service life.",
     features: [
