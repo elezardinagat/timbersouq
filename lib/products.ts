@@ -4,7 +4,7 @@ export const products = [
     name: "LVL Board",
     fullName: "Laminated Veneer Lumber Board",
     description: "High-strength engineered wood for structural applications",
-    image: "/timbersouq/images/products/lvl-board.webp",
+    image: "/timbersouq/images/products/lvl-boards.webp",
     detailedDescription:
       "LVL (Laminated Veneer Lumber) is an engineered wood product that uses multiple layers of thin wood assembled with adhesives. It offers superior strength and stability compared to conventional lumber, making it ideal for structural applications in construction.",
     features: [
@@ -277,7 +277,7 @@ export const products = [
     fullName: "Premium Redwood Timber",
     description:
       "Durable and naturally beautiful redwood for construction and joinery",
-    image: "/timbersouq/images/products/red-wood.jpg",
+    image: "/timbersouq/images/products/red-wood.webp",
     detailedDescription:
       "Redwood timber is prized for its rich reddish-brown color, natural durability, and resistance to decay. Sourced from sustainable forests, it is an excellent choice for both structural and decorative applications, offering a premium finish that stands the test of time.",
     features: [
