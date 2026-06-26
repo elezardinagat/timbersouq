@@ -82,6 +82,8 @@ const newsArticles = [
 ];
 
 export default function NewsPage() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  const imgUrl = (src: string) => src.startsWith('http') ? src : `${basePath}${src}`;
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -111,7 +113,7 @@ export default function NewsPage() {
                 <div
                   className="h-72 bg-gradient-to-br from-timber-green/20 to-timber-brown/20"
                   style={{
-                    backgroundImage: `linear-gradient(135deg, rgba(45,64,52,0.85), rgba(47,33,24,0.75)), url(${article.image})`,
+                    backgroundImage: `linear-gradient(135deg, rgba(45,64,52,0.85), rgba(47,33,24,0.75)), url(${imgUrl(article.image)})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}

@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function ProductDetailPage({ params }: Props) {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   const product = products.find((p) => p.slug === params.slug);
 
   if (!product) {
@@ -63,7 +64,7 @@ export default function ProductDetailPage({ params }: Props) {
             <div
               className="w-full h-72 lg:h-80 rounded-xl bg-gray-200 shadow-lg overflow-hidden border border-white/10"
               style={{
-                backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.4)), url(${product.image})`,
+                backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.4)), url(${basePath}${product.image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}

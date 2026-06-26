@@ -29,6 +29,7 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<
@@ -85,7 +86,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           <div
             className="absolute inset-0 bg-gray-200 transition-transform duration-700 group-hover:scale-110"
             style={{
-              backgroundImage: `url(${product.image})`,
+              backgroundImage: `url(${basePath}${product.image})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
