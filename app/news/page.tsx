@@ -77,7 +77,7 @@ const newsArticles = [
 
       We look forward to welcoming you to Wood Expo Dubai 2026 and showcasing how TimberSouq continues to lead the timber industry in quality, innovation, and customer service.
     `,
-    image: "../images/wood-show-2025.webp",
+    image: "/images/wood-show-2025.webp",
   },
 ];
 

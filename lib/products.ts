@@ -4,7 +4,7 @@ export const products = [
     name: "LVL Board",
     fullName: "Laminated Veneer Lumber Board",
     description: "High-strength engineered wood for structural applications",
-    image: "/timbersouq/images/products/lvl-boards.webp",
+    image: "/images/products/lvl-boards.webp",
     detailedDescription:
       "LVL (Laminated Veneer Lumber) is an engineered wood product that uses multiple layers of thin wood assembled with adhesives. It offers superior strength and stability compared to conventional lumber, making it ideal for structural applications in construction.",
     features: [
@@ -34,7 +34,7 @@ export const products = [
     name: "White Wood",
     fullName: "Premium White Wood Timber",
     description: "Premium quality softwood for construction and finishing",
-    image: "/timbersouq/images/products/white-wood.jpg",
+    image: "/images/products/white-wood.jpg",
     detailedDescription:
       "White wood is premium quality softwood timber sourced from sustainable forests. Known for its light color and fine grain, it is ideal for both structural and decorative applications in construction and interior design.",
     features: [
@@ -64,7 +64,7 @@ export const products = [
     name: "Scaffolding Board",
     fullName: "Scaffolding Board / Plank",
     description: "Durable boards for safe scaffolding systems",
-    image: "/timbersouq/images/products/scaffolding-board.webp",
+    image: "/images/products/scaffolding-board.webp",
     detailedDescription:
       "Our scaffolding boards are manufactured to meet strict safety standards for construction scaffolding. Made from strong, treated timber, they provide a safe working platform for construction workers at height.",
     features: [
@@ -94,7 +94,7 @@ export const products = [
     name: "Film Faced Plywood",
     fullName: "Film Faced Shuttering Plywood",
     description: "Water-resistant plywood for concrete formwork",
-    image: "/timbersouq/images/products/film-faced-plywood.jpg",
+    image: "/images/products/film-faced-plywood.jpg",
     detailedDescription:
       "Film faced plywood is specially designed for concrete formwork applications. With a durable film coating on both sides, it provides a smooth finish to concrete and can be reused multiple times, making it cost-effective for large construction projects.",
     features: [
@@ -124,7 +124,7 @@ export const products = [
     name: "H20 Beam",
     fullName: "H20 Timber Beam for Formwork",
     description: "Strong support beams for formwork systems",
-    image: "/timbersouq/images/products/h20-beam.jpg",
+    image: "/images/products/h20-beam.jpg",
     detailedDescription:
       "H20 beams are specialized formwork beams designed for high-performance concrete forming systems. With an I-beam profile, they offer excellent load-bearing capacity while remaining lightweight and easy to handle.",
     features: [
@@ -156,7 +156,7 @@ export const products = [
   //   name: "Hardboard",
   //   fullName: "High-Density Hardboard",
   //   description: "Dense fiberboard for interior applications",
-  //   image: "/timbersouq/images/products/hardboard.webp",
+  //   image: "/images/products/hardboard.webp",
   //   detailedDescription:
   //     "Hardboard is a high-density fiberboard product made from compressed wood fibers. It provides a smooth, durable surface ideal for interior finishing, furniture backing, and various construction applications.",
   //   features: [
@@ -186,7 +186,7 @@ export const products = [
     name: "Commercial Plywood",
     fullName: "Commercial Grade Plywood",
     description: "Versatile plywood for various construction needs",
-    image: "/timbersouq/images/products/commercial-plywood.jpg",
+    image: "/images/products/commercial-plywood.jpg",
     detailedDescription:
       "Commercial plywood is a versatile engineered wood panel suitable for a wide range of construction and interior applications. Made from multiple layers of wood veneers, it offers good strength, stability, and value for money.",
     features: [
@@ -216,7 +216,7 @@ export const products = [
     name: "Galvanized Iron (GI) sheets",
     fullName: "Galvanized Iron (GI) Sheets",
     description: "Corrosion-resistant galvanized iron sheets for construction",
-    image: "/timbersouq/images/products/galvanized-iron-sheets.webp",
+    image: "/images/products/galvanized-iron-sheets.webp",
     detailedDescription:
       "Galvanized Iron (GI) Sheets are steel sheets coated with a layer of zinc to prevent rust and corrosion. They are widely used in roofing, cladding, and general construction due to their durability and long service life.",
     features: [
@@ -246,7 +246,7 @@ export const products = [
     name: "Iron Rebar",
     fullName: "Deformed Steel Reinforcement Bar",
     description: "High-strength steel bars for concrete reinforcement",
-    image: "/timbersouq/images/products/iron-rebar.webp",
+    image: "/images/products/iron-rebar.webp",
     detailedDescription:
       "Iron Rebar (reinforcing bar) is a deformed steel bar used to reinforce concrete structures. The ribbed surface provides superior bonding with concrete, enhancing tensile strength and structural integrity in buildings, bridges, and infrastructure.",
     features: [
@@ -277,7 +277,7 @@ export const products = [
     fullName: "Premium Redwood Timber",
     description:
       "Durable and naturally beautiful redwood for construction and joinery",
-    image: "/timbersouq/images/products/red-wood.webp",
+    image: "/images/products/red-wood.webp",
     detailedDescription:
       "Redwood timber is prized for its rich reddish-brown color, natural durability, and resistance to decay. Sourced from sustainable forests, it is an excellent choice for both structural and decorative applications, offering a premium finish that stands the test of time.",
     features: [

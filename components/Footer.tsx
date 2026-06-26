@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   const productLinks = [
@@ -25,7 +25,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="flex items-center">
               <Image
-                src="/timbersouq/images/logo/timbersouq-logo.png"
+                src="/images/logo/timbersouq-logo.png"
                 alt="TimberSouq Logo"
                 width={180}
                 height={50}
